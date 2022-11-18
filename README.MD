@@ -23,6 +23,10 @@ how to deploy an odoo instance using `docker-compose`.
 
 the above files (./config and ./addons) are automatically added in your current directory after you run ```docker-compose up -d``` command
 
+* To install a new python package in the container, just use:
+
+``` docker exec -it <container_id> pip3 install <package_name>```
+
 #### Nota Bene !!!
 
 You can also update the `docker-compose.yml` file for stuff like:
