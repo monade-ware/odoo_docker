@@ -6,7 +6,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "127.0.0.1:8069:8069"
+      - "0.0.0.0:8069:8069"
     volumes:
       - data:/var/lib/odoo
       - ./config:/etc/odoo
