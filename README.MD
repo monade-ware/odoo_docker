@@ -1,4 +1,4 @@
-## Africa Systems
+## MonadeWare
 ### Odoo instance deployment procedure
 
 `docker` or `docker-compose`  are two great tools when it comes
@@ -12,9 +12,16 @@ how to deploy an odoo instance using `docker-compose`.
 * Position your self on the branch corresponding to the odoo version you want to deploy
 
     ```git checkout <branch_name>```
+    
+* update application port
+      use nano editor to edit public port in docker-compose.yml line 9
+      
+      ```- "0.0.0.0:<desire_port>:8069"```
+      
 * Create the containers
 
     ```docker-compose up -d```
+    
 * Update the configuration file accuratly, using the provided template in this repository
     
     ```under ./config/odoo.conf ```
@@ -22,6 +29,7 @@ how to deploy an odoo instance using `docker-compose`.
     ```and add your modules under ./addons```
 
 the above files (./config and ./addons) are automatically added in your current directory after you run ```docker-compose up -d``` command
+
 
 * To install a new python package in the container, just use:
 
