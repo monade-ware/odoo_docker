@@ -1,12 +1,13 @@
 version: '3'
 services:
   odoo:
-    image: odoo:16.0
+    image: odoo:15.0
     env_file: .env
     depends_on:
       - postgres
     ports:
-      - "0.0.0.0:8069:8069"
+      - "0.0.0.0:8001:8069"
+      - "0.0.0.0:8002:8072"
     volumes:
       - data:/var/lib/odoo
       - ./config:/etc/odoo
