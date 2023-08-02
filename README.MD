@@ -1,4 +1,4 @@
-## Africa Systems
+## MonadeWare
 ### Odoo instance deployment procedure
 
 `docker` or `docker-compose`  are two great tools when it comes
