@@ -1,15 +1,15 @@
 ## monadeware
 ### Odoo instance deployment procedure
 
-`docker` or `docker-compose`  are two great tools for simplifying application deployment. This document intends to describe
+`docker` and `docker-compose`  are two great tools for simplifying application deployment. This document intends to describe
 how to deploy an odoo instance using `docker-compose`.
 
 #### Steps
 
 * Clone the code on your server
-* Position yourself on the branch corresponding to the odoo version you want to deploy
+* Edit line 4 in ```docker-compose.yml``` to precise the odoo version you want to deploy
 
-    ```git checkout <branch_name>```
+    ```image: odoo:<my_preferred_version>```
     
 * update application port
       use nano editor to edit public port in docker-compose.yml line 9
