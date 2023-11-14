@@ -33,6 +33,16 @@ the above files (./config and ./addons) are automatically added to your current 
 
 ``` docker exec -it <container_id> pip3 install <package_name>```
 
+#### Accessing odoo shell
+
+``` docker exec -it <container_id> <db_user> shell -d <db_name> --db_host postgres --db_password <db_password> ```
+
+db_user, db_password can be found in the .env file.
+
+#### Uninstalling module from shell
+
+``` self.env['ir.module.module'].search([('name', '=', '<module_name>')]).button_immediate_uninstall() ```
+
 #### Nota Bene !!!
 
 You can also update the `docker-compose.yml` file for stuff like:
