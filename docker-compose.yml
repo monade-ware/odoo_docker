@@ -12,6 +12,7 @@ services:
       - data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
+    restart: always
   postgres:
     image: postgres:13
     env_file: .env
@@ -19,7 +20,7 @@ services:
       - "0.0.0.0:8003:5432"
     volumes:
       - db:/var/lib/postgresql/data/pgdata
-
+  restart: always
 volumes:
   data:
   db:
