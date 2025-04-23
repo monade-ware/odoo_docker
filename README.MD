@@ -39,6 +39,12 @@ the above files (./config and ./addons) are automatically added to your current 
 
 db_user, db_password can be found in the .env file.
 
+
+#### Updating module with oddo shell
+
+```docker exec -it <container-id> odoo -c /etc/odoo/odoo.conf  -d <db_name> --db_host postgres -u <module_name> --db_password <db_password>```
+
+
 #### Uninstalling module from shell
 
 ``` self.env['ir.module.module'].search([('name', '=', '<module_name>')]).button_immediate_uninstall() ```
