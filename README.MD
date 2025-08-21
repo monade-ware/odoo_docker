@@ -26,6 +26,10 @@ how to deploy an odoo instance using `docker-compose`.
 
     ``` and add your modules under ./addons```
 
+* Update the environment file with your own passwords and usernames
+    
+    ```under .env```
+
 the above files (./config and ./addons) are automatically added to your current directory after you run ```docker-compose up -d``` command
 
 
