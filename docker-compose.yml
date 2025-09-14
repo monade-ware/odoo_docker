@@ -1,26 +1,28 @@
-version: '3'
+                                                                    
 services:
   odoo:
     image: odoo:15.0
     env_file: .env
     depends_on:
-      - postgres
+      - db
     ports:
-      - "0.0.0.0:8001:8069"
-      - "0.0.0.0:8002:8072"
+      - "0.0.0.0:8005:8069"   # Odoo web
+      - "0.0.0.0:8006:8072"   # Odoo longpolling
     volumes:
       - data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
     restart: always
-  postgres:
+
+  db:
     image: postgres:13
     env_file: .env
     ports:
-      - "0.0.0.0:8003:5432"
+      - "0.0.0.0:8007:5432"
     volumes:
       - db:/var/lib/postgresql/data/pgdata
     restart: always
+
 volumes:
   data:
   db:
