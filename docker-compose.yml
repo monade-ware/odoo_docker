@@ -13,7 +13,11 @@ services:
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
     restart: always
-
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
   db:
     image: postgres:13
     env_file: .env
@@ -22,7 +26,11 @@ services:
     volumes:
       - db:/var/lib/postgresql/data/pgdata
     restart: always
-
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 volumes:
   data:
   db:
