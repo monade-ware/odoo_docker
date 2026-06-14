@@ -1,4 +1,4 @@
-## monadeware
+## monadware
 ### Odoo instance deployment procedure
 
 `docker` and `docker-compose`  are two great tools for simplifying application deployment. This document intends to describe
